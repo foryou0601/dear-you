@@ -16,6 +16,19 @@ const setMusicState = (isPlaying) => {
   soundLabel.textContent = isPlaying ? 'Tắt nhạc' : 'Bật nhạc';
 };
 
+const startMusicFromInteraction = async () => {
+  if (!music.paused) return;
+
+  try {
+    await music.play();
+    setMusicState(true);
+    document.removeEventListener('pointerdown', startMusicFromInteraction);
+    document.removeEventListener('keydown', startMusicFromInteraction);
+  } catch {
+    setMusicState(false);
+  }
+};
+
 soundToggle.addEventListener('click', async () => {
   if (music.paused) {
     try {
@@ -30,6 +43,9 @@ soundToggle.addEventListener('click', async () => {
   music.pause();
   setMusicState(false);
 });
+
+document.addEventListener('pointerdown', startMusicFromInteraction);
+document.addEventListener('keydown', startMusicFromInteraction);
 
 messageTrigger.addEventListener('click', () => {
   modal.showModal();
