@@ -14,8 +14,10 @@ const playMusic = async () => {
 };
 
 music.autoplay = true;
+music.volume = 1;
 music.load();
 window.addEventListener('load', playMusic, { once: true });
+music.addEventListener('canplay', playMusic, { once: true });
 document.addEventListener('pointerdown', playMusic);
 document.addEventListener('keydown', playMusic);
 
