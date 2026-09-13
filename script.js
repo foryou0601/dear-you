@@ -16,7 +16,8 @@ const setMusicState = (isPlaying) => {
   soundLabel.textContent = isPlaying ? 'Tắt nhạc' : 'Bật nhạc';
 };
 
-const startMusicFromInteraction = async () => {
+const startMusicFromInteraction = async (event) => {
+  if (event?.target.closest('.sound-toggle')) return;
   if (!music.paused) return;
 
   try {

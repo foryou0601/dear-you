@@ -7,7 +7,7 @@
   --deep-forest: #102a24;
   --sage: #93b49a;
   --rose: #efc2bb;
-  --panel-width: min(40vw, 520px);
+  --panel-width: min(34vw, 520px);
   --panel-gap: clamp(14px, 2vw, 28px);
 }
 
