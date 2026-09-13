@@ -124,7 +124,7 @@ h1 em { color: #f3d4c7; font-style: italic; font-weight: 500; }
   .footer-note { right: 17px; bottom: 24px; font-size: 8px; }
 }
 
-.topbar, .hero-content, .footer-note { display: none; }
+.hero-content, .footer-note { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }

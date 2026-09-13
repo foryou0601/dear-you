@@ -5,6 +5,10 @@ const messageTrigger = document.querySelector('.message-trigger');
 const modal = document.querySelector('.message-modal');
 const modalClose = document.querySelector('.modal-close');
 
+music.addEventListener('error', () => {
+  soundLabel.textContent = 'Không đọc được nhạc';
+});
+
 const setMusicState = (isPlaying) => {
   soundToggle.classList.toggle('is-playing', isPlaying);
   soundToggle.setAttribute('aria-pressed', String(isPlaying));
@@ -45,6 +49,7 @@ window.addEventListener('load', async () => {
     await music.play();
     setMusicState(true);
   } catch {
+    soundLabel.textContent = 'Bấm để bật nhạc';
     setMusicState(false);
   }
 });
