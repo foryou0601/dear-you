@@ -8,6 +8,7 @@ const playMusic = async () => {
     await music.play();
     document.removeEventListener('pointerdown', playMusic);
     document.removeEventListener('keydown', playMusic);
+    document.removeEventListener('click', playMusic, true);
   } catch {
     // Chrome and Edge may wait for a user gesture before allowing audio.
   }
@@ -20,6 +21,7 @@ window.addEventListener('load', playMusic, { once: true });
 music.addEventListener('canplay', playMusic, { once: true });
 document.addEventListener('pointerdown', playMusic);
 document.addEventListener('keydown', playMusic);
+document.addEventListener('click', playMusic, { capture: true });
 
 messageTrigger.addEventListener('click', () => {
   if (!modal.open) modal.showModal();
