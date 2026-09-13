@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173b32" />
+    <title>Gửi em một khu rừng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="scene" aria-label="Lời nhắn trong khu rừng tình yêu">
+      <div class="grain" aria-hidden="true"></div>
+      <div class="firefly firefly-one" aria-hidden="true"></div>
+      <div class="firefly firefly-two" aria-hidden="true"></div>
+      <div class="firefly firefly-three" aria-hidden="true"></div>
+
+      <section class="photo-panel" aria-label="Bức ảnh kỷ niệm">
+        <img src="assets/forest-love.jpg" alt="Bức ảnh kỷ niệm" />
+        <span class="photo-caption">một góc nhỏ dành cho chúng ta</span>
+      </section>
+
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Trang chủ">
+          <span class="brand-mark">♡</span>
+          <span>woodland notes</span>
+        </a>
+        <button class="sound-toggle" type="button" aria-label="Bật nhạc nền" aria-pressed="false">
+          <span class="sound-icon" aria-hidden="true">◖</span>
+          <span class="sound-label">Bật nhạc</span>
+        </button>
+      </header>
+
+      <section class="hero-content">
+        <p class="eyebrow"><span></span> một điều nhỏ muốn nói <span></span></p>
+        <h1>Gặp em,<br /><em>rừng cũng dịu dàng hơn.</em></h1>
+        <p class="intro">Có những người bước vào đời ta thật khẽ,<br />nhưng để lại cả một mùa xanh.</p>
+        <button class="message-trigger" type="button">
+          <span>mở lời nhắn</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </button>
+      </section>
+
+      <footer class="footer-note">
+        <span class="scroll-line" aria-hidden="true"></span>
+        <span>kéo xuống để nghe trái tim kể chuyện</span>
+      </footer>
+
+      <dialog class="message-modal" aria-labelledby="message-title">
+        <button class="modal-close" type="button" aria-label="Đóng lời nhắn">×</button>
+        <p class="modal-kicker">Dear Thanh Tuyen</p>
+        <h2 id="message-title">When I met you, I had a strange feeling<br />as if I had finally found where I belonged.”</h2>
+        <p class="modal-copy">And somehow, being with her made the world feel a little more like home.</p>
+        <span class="signature">— Love best ,</span>
+        <span class="signature">— Vinh.</span>
+      </dialog>
+
+      <audio id="background-music" loop preload="auto" autoplay>
+        <source src="assets/love-song.mp3" type="audio/mpeg" />
+        <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_9468bc8f3c.mp3" type="audio/mpeg" />
+      </audio>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
