@@ -56,10 +56,6 @@ modalClose.addEventListener('click', () => {
   modal.close();
 });
 
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) modal.close();
-});
-
 window.addEventListener('load', async () => {
   modal.showModal();
   try {
