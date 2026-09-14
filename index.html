@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=4" />
+    <link rel="stylesheet" href="style.css?v=5" />
   </head>
   <body>
     <main class="scene" aria-label="Lời nhắn trong khu rừng ">
@@ -16,6 +16,11 @@
       <div class="firefly firefly-one" aria-hidden="true"></div>
       <div class="firefly firefly-two" aria-hidden="true"></div>
       <div class="firefly firefly-three" aria-hidden="true"></div>
+
+      <section class="welcome-screen" aria-label="Mở lời nhắn">
+        <p class="welcome-kicker">một câu chuyện nhỏ đang chờ bạn</p>
+        <button class="journey-button" type="button">begin your journey <span aria-hidden="true">↗</span></button>
+      </section>
 
       <section class="photo-panel" aria-label="Bức ảnh kỷ niệm">
         <img src="assets/forest-love.jpg" alt="Bức ảnh kỷ niệm" />
@@ -37,20 +42,20 @@
         <span>kéo xuống để nghe trái tim kể chuyện</span>
       </footer>
 
-      <dialog class="message-modal" aria-labelledby="message-title">
+      <section class="message-modal" aria-labelledby="message-title" hidden>
         <button class="modal-close" type="button" aria-label="Đóng lời nhắn">×</button>
         <p class="modal-kicker">Dear Thanh Tuyen,</p>
         <h2 id="message-title">"You have been in every line I have ever read."<h3><br /><span class="book-title">— Great Expectations</span></h3></h2>
         <p class="modal-copy">And somehow, being with her made the world feel a little more like home.</p>
         <span class="signature"> Best wishes,</span>
         
-      </dialog>
+      </section>
 
       <audio id="background-music" loop preload="auto" autoplay playsinline>
         <source src="assets/love-song.mp3" type="audio/mpeg" />
         <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_9468bc8f3c.mp3" type="audio/mpeg" />
       </audio>
     </main>
-    <script src="script.js?v=6"></script>
+    <script src="script.js?v=7"></script>
   </body>
 </html>

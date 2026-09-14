@@ -1,4 +1,6 @@
 const music = document.querySelector('#background-music');
+const scene = document.querySelector('.scene');
+const journeyButton = document.querySelector('.journey-button');
 const messageTrigger = document.querySelector('.message-trigger');
 const modal = document.querySelector('.message-modal');
 const modalClose = document.querySelector('.modal-close');
@@ -14,25 +16,22 @@ const playMusic = async () => {
   }
 };
 
-music.autoplay = true;
 music.volume = 1;
-window.addEventListener('load', playMusic, { once: true });
-document.addEventListener('pointerdown', playMusic);
-document.addEventListener('keydown', playMusic);
-document.addEventListener('click', playMusic, { capture: true });
+
+journeyButton.addEventListener('click', async () => {
+  scene.classList.add('is-started');
+  await playMusic();
+  modal.hidden = false;
+  requestAnimationFrame(() => modal.classList.add('is-visible'));
+});
 
 messageTrigger.addEventListener('click', () => {
-  if (!modal.open) modal.showModal();
+  modal.hidden = false;
+  requestAnimationFrame(() => modal.classList.add('is-visible'));
 });
 
 modalClose.addEventListener('click', () => {
-  modal.close();
+  modal.classList.remove('is-visible');
+  modal.hidden = true;
 });
 
-modal.addEventListener('cancel', (event) => {
-  event.preventDefault();
-});
-
-window.addEventListener('load', () => {
-  if (!modal.open) modal.showModal();
-});
